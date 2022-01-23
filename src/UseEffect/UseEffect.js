@@ -25,7 +25,6 @@ function UseEffect() {
     //обработчик клика
     const handleClick = id => setActiveUser(id);
 
-    //не до конца ясно, зачем передавать объект info (текст задания), если явно достаточно передавать id.
     return (
         <div className="container">
             <div className="row justify-content-center">
@@ -33,7 +32,7 @@ function UseEffect() {
                     <List users={users} activeUser={activeUser} onClick={handleClick} />
                 </div>
                 <div className="col-4" style={{ width: "324px" }}>
-                    <Details info={{ id: activeUser, name: "это поле зачем то нужно отправить по заданию" }} />
+                    <Details id={activeUser} />
                 </div>
 
             </div>

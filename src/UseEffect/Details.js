@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 function Details(props) {
-    const info = props.info;
+    const id = props.id;
     const [user, setUser] = useState({});
     const [isLoading, setLoading] = useState(false);
 
     useEffect(() => {
-        updateUserInfo(info.id);
-    }, [info]);
+        updateUserInfo(id);
+    }, [id]);
 
     const updateUserInfo = (id) => {
         if (id > 0) {
@@ -48,10 +48,7 @@ function Details(props) {
 }
 
 Details.propTypes = {
-    info: PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        name: PropTypes.string.isRequired
-    })
+        id: PropTypes.number.isRequired
 };
 
 export default Details;
